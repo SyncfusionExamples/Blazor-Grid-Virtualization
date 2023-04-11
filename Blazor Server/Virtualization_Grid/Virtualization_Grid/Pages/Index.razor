@@ -1,0 +1,83 @@
+﻿@page "/"
+
+@using Syncfusion.Blazor.Grids
+
+<SfGrid DataSource="@GridData" Height="450" Width="800" RowHeight="38" EnableVirtualization="true" EnableColumnVirtualization="true" EnableVirtualMaskRow="true">
+    <GridColumns>
+        <GridColumn Field=@nameof(Order.OrderID) HeaderText="Order ID" TextAlign="TextAlign.Center" IsPrimaryKey="true" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.CustomerID) HeaderText="Customer Name" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.EmployeeID) HeaderText="Employee ID" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.OrderDate) HeaderText=" Order Date" Format="d" Type="ColumnType.Date" TextAlign="TextAlign.Center" Width="130"></GridColumn>
+        <GridColumn Field=@nameof(Order.Freight) HeaderText="Freight" Format="C2" TextAlign="TextAlign.Center" Width="120"></GridColumn>
+        <GridColumn Field=@nameof(Order.ShipCountry) HeaderText="Ship Country" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.ShipCity) HeaderText="Ship City" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.ShipAddress) HeaderText="Ship Address" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.ShippedDate) HeaderText="Shipped Date" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.ProductName) HeaderText="ProductName" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.Quantity) HeaderText="Quantity" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.SupplierName) HeaderText="SupplierName" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.UnitPrice) HeaderText="UnitPrice" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.Phone) HeaderText="Phone" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.Discount) HeaderText="Discount" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.CategoryName) HeaderText="CategoryName" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.age) HeaderText="age" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.ContactName) HeaderText="ContactName" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.paymentMode) HeaderText="paymentMode" TextAlign="TextAlign.Center" Width="150"></GridColumn>
+    </GridColumns>
+</SfGrid>
+
+@code {
+
+    public List<Order>? GridData { get; set; }
+
+    protected override void OnInitialized()
+    {
+        GridData = Enumerable.Range(1, 10000).Select(x => new Order()
+            {
+                OrderID = 1000 + x,
+                CustomerID = (new string[] { "ALFKI", "ANANTR", "ANTON", "BLONP", "BOLID" })[new Random().Next(5)],
+                Freight = 2.1 * x,
+                OrderDate = DateTime.Now.AddDays(-x),
+                ShipCountry = (new string[] { "Brazil", "Austria", "Switzerland", "Germany", "Russia" })[new Random().Next(5)],
+                ShipCity = (new string[] { "Berlin", "Madrid", "Cholchester", "Marseille", "Tsawaseen" })[new Random().Next(5)],
+                EmployeeID = 10000 + x,
+                ShipAddress = (new string[] { "Kirchgasse 6", "Avda. Azteca 123", "Carrera 52 con Ave. Bolívar #65-98 Llano Largo", "Magazinweg 7", "1029 - 12th Ave. S." })[new Random().Next(5)],
+                ShippedDate = DateTime.Now.AddDays(x),
+                ProductName = (new string[] { "Mobile", "laptop", "Earbuds", "Watches", "Shoes" })[new Random().Next(5)],
+                Quantity = 2,
+                UnitPrice = 2 * x,
+                Discount = (new string[] { "20%", "25%", "15%", "50%", "35%" })[new Random().Next(5)],
+                age = (new string[] { "20", "24", "18", "54", "23" })[new Random().Next(5)],
+                CategoryName = (new string[] { "Home Appliances", "Electronics", "Food", "Wearings", "Ornaments" })[new Random().Next(5)],
+                SupplierName = (new string[] { "Marvis", "John", "Kate", "clavin", "Goldberg" })[new Random().Next(5)],
+                ContactName = (new string[] { "ALFKI", "ANANTR", "ANTON", "BLONP", "BOLID" })[new Random().Next(5)],
+                Phone = (new string[] { "9876543210", "8765409234", "9567832456", "7683540983", "9634267854" })[new Random().Next(5)],
+                paymentMode = (new string[] { "Gpay", "Paytm", "Phonepay", "paypal", "COD" })[new Random().Next(5)],
+            }).ToList();
+    }
+
+    public class Order
+    {
+        public int? OrderID { get; set; }
+        public string? CustomerID { get; set; }
+        public int? EmployeeID { get; set; }
+        public double? Freight { get; set; }
+        public DateTime? OrderDate { get; set; }
+        public DateTime? ShippedDate { get; set; }
+        public string? ShipCountry { get; set; }
+        public string? ShipCity { get; set; }
+        public string? ShipAddress { get; set; }
+        public string? ProductName { get; set; }
+        public int? Quantity { get; set; }
+        public double? UnitPrice { get; set; }
+        public string? Discount { get; set; }
+        public string? CategoryName { get; set; }
+        public string? SupplierName { get; set; }
+        public string? ContactName { get; set; }
+        public string? ContactTitle { get; set; }
+        public string? Phone { get; set; }
+        public string? age { get; set; }
+        public string? paymentMode { get; set; }
+
+    }
+}
