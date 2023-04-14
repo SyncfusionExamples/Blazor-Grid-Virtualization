@@ -1,0 +1,13 @@
+using Grid_Virtualization;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Syncfusion.Blazor;
+
+var builder = WebAssemblyHostBuilder.CreateDefault(args);
+builder.RootComponents.Add<App>("#app");
+builder.RootComponents.Add<HeadOutlet>("head::after");
+
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+builder.Services.AddSyncfusionBlazor();
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mgo+DSMBaFt/QHRqVVhkVVpHaV5CQmFJfFBmRGFTe1x6dlNWESFaRnZdQV1hSXZTdkFlW3pdc3xc;Mgo+DSMBPh8sVXJ0S0J+XE9Af1RBQmJJYVF2R2BJflx6cFdMYlpBNQtUQF1hSn5Rdk1jWXtYcnFRQmNV;ORg4AjUWIQA/Gnt2VVhkQlFaclZJXnxIfkx0RWFab19yflFEal5XVAciSV9jS31TdEVrWX9adnZQQmZfVQ==;MTA4NTIyNUAzMjMwMmUzNDJlMzBqNnlRMXFjenJHOWJCQXIzMm1odW9pZXMyQ1psS3pmMWN5Y1NEbC9yUW1nPQ==;MTA4NTIyNkAzMjMwMmUzNDJlMzBpbURCcWM2RE5MNzJJQTJBQzFCYzhRUjAxZndNekxiZFVvVGx2aitGRWc0PQ==;NRAiBiAaIQQuGjN/V0Z+WE9EaFtLVmBWf1NpR2NbfE5xdl9CYlZTQmYuP1ZhSXxQdkdjUX9edHJXQ2VfVEA=;MTA4NTIyOEAzMjMwMmUzNDJlMzBkbDQyK2NOY3JPancrbXdPUWU4aXNPZzRWd0cwbHNSWVNSWnpzNHUySngwPQ==;MTA4NTIyOUAzMjMwMmUzNDJlMzBPL0tTU1JUVktYbVRoSllGVzVMWVFTSkM3ZGZkK01nczZ1THFSd2JvclVrPQ==;Mgo+DSMBMAY9C3t2VVhkQlFaclZJXnxIfkx0RWFab19yflFEal5XVAciSV9jS31TdEVrWX9adnZQQGFcVQ==;MTA4NTIzMUAzMjMwMmUzNDJlMzBQb24xUHNXN1hZUHFyUHk2MGFoN3NFYzN4bGdnVGtrRGpvUzZLUXRRbDBBPQ==;MTA4NTIzMkAzMjMwMmUzNDJlMzBjTkVmbjFJOWh0eEY1QS85Zk0xWGg1TXRvTC9nS2hvODJWNGhPQ3ZodTZFPQ==;MTA4NTIzM0AzMjMwMmUzNDJlMzBkbDQyK2NOY3JPancrbXdPUWU4aXNPZzRWd0cwbHNSWVNSWnpzNHUySngwPQ==");
+await builder.Build().RunAsync();
