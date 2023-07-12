@@ -2,7 +2,7 @@
 
 @using Syncfusion.Blazor.Grids
 
-<SfGrid DataSource="@GridData" Height="450" Width="800" RowHeight="38" EnableVirtualization="true" EnableColumnVirtualization="true" EnableVirtualMaskRow="true">
+<SfGrid DataSource="@GridData" Height="450" Width="800" EnableVirtualization="true" EnableColumnVirtualization="true" EnableVirtualMaskRow="true">
     <GridColumns>
         <GridColumn Field=@nameof(Order.OrderID) HeaderText="Order ID" TextAlign="TextAlign.Center" IsPrimaryKey="true" Width="150"></GridColumn>
         <GridColumn Field=@nameof(Order.CustomerID) HeaderText="Customer Name" TextAlign="TextAlign.Center" Width="150"></GridColumn>
