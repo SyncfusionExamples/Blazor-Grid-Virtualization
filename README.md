@@ -1,4 +1,4 @@
-# Blazor-Grid-Virtualization
+# Blazor Grid Virtualization
 A quick-start project that helps you how to virtualization in blazor DataGrid. 
 
 Documentation: https://blazor.syncfusion.com/documentation/datagrid/virtualization#column-virtualization
