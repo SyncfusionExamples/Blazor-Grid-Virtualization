@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains sample applications that demonstrate virtualization in the Syncfusion Blazor DataGrid. The samples show how large collections of records can be rendered efficiently by displaying only the rows currently visible within the viewport instead of rendering the entire dataset at once. The repository includes separate implementations for both Blazor Server and Blazor WebAssembly, allowing developers to explore virtualization behavior across different Blazor hosting models. These samples provide a practical reference for implementing high-performance scrolling experiences when working with large amounts of tabular data.
+This repository contains sample applications that demonstrate virtualization in the Syncfusion [Blazor DataGrid](https://www.syncfusion.com/blazor-components/blazor-datagrid). The samples show how large collections of records can be rendered efficiently by displaying only the rows currently visible within the viewport instead of rendering the entire dataset at once. The repository includes separate implementations for both Blazor Server and Blazor WebAssembly, allowing developers to explore virtualization behavior across different Blazor hosting models. These samples provide a practical reference for implementing high-performance scrolling experiences when working with large amounts of tabular data.
 
 ## Key Features
 
